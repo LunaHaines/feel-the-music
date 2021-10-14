@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { ReactElement } from "react";
+import { RootState } from "../../store/store";
 
 interface State {
     show: boolean;
@@ -29,3 +30,7 @@ export const toastSlice = createSlice({
         }
     }
 })
+
+export const { showToast, hideToast } = toastSlice.actions;
+export const toastState = (state: RootState) => state.toast;
+export default toastSlice.reducer;
