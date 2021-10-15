@@ -9,7 +9,13 @@ function Notification() {
     return (
         <>
             <Toast onClose={() => dispatch(hideToast())} show={info.show} delay={3000} autohide>
-                </Toast> 
+                <Toast.Header>
+                    {info.header}
+                </Toast.Header>
+                <Toast.Body>
+                    {info.body}
+                </Toast.Body>
+            </Toast> 
         </>
     )
 }
