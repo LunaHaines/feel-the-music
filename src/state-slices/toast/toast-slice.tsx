@@ -23,7 +23,7 @@ export const toastSlice = createSlice({
             state.body = action.payload.body;
             state.show = true;
         },
-        hideToast(state, action) {
+        hideToast(state) {
             state.show = false;
             state.body = "";
             state.header = <></>;
