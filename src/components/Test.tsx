@@ -9,12 +9,22 @@ function Test() {
         body: 'it works!'
     }
 
+    let otherPayload = {
+        body: 'this works too!'
+    }
+
     let handleClick = () => {
         dispatch(showToast(payload));
     }
+
+    let handleOtherClick = () => {
+        dispatch(showToast(otherPayload))
+    }
+
     return (
         <>
             <Button onClick={() => handleClick()}>Show Notification</Button>
+            <Button onClick={() => handleOtherClick()}>Show Other Notification</Button>
         </>
     )
 }
