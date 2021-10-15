@@ -1,17 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { ReactElement } from "react";
 import { RootState } from "../../store/store";
 
 interface State {
     show: boolean;
     body: string;
-    header: ReactElement;
 }
 
 const initialState: State =  {
     show: false,
-    body: '',
-    header: <></>
+    body: ''
 }
 
 export const toastSlice = createSlice({
@@ -19,14 +16,12 @@ export const toastSlice = createSlice({
     initialState,
     reducers: {
         showToast(state, action) {
-            state.header = action.payload.header;
             state.body = action.payload.body;
             state.show = true;
         },
         hideToast(state) {
             state.show = false;
             state.body = "";
-            state.header = <></>;
         }
     }
 })
